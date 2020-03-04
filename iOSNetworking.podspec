@@ -91,7 +91,7 @@ This pod can be used for making networking call using URLSession
   #  Not including the public_header_files will make all headers public.
   #
 
-  spec.source_files  = "Source/**/*.swift"
+  spec.source_files  = "iOSNetworking/**/*.*"
   spec.exclude_files = "Classes/Exclude"
 
   # spec.public_header_files = "Classes/**/*.h"
