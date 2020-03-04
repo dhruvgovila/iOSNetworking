@@ -13,5 +13,5 @@ This pod can be used for making networking call using URLSession
   s.source       = { :git => "https://github.com/dhruvgovila/iOSNetworking.git", :branch => "master", :tag => s.version.to_s }
   s.ios.deployment_target = "11.0"
   s.swift_version     = '4.2'
-  s.source_files  = "iOSNetworking/**/*.*"
+  s.source_files  = "iOSNetworking/**/*.swift"
 end

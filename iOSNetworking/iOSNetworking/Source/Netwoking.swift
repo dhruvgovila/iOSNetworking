@@ -20,6 +20,10 @@ open class Networking {
         })
         task.resume()
     }
+    
+    open func makeAnotherApiCall() -> Bool {
+        return true
+    }
 }
 
 
