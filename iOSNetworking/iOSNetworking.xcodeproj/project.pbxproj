@@ -7,15 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E701AD942514CF0A00303540 /* NetworkRequestParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = E701AD932514CF0A00303540 /* NetworkRequestParams.swift */; };
 		E760AE1F240FE3C700DE9EC8 /* iOSNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = E760AE1D240FE3C700DE9EC8 /* iOSNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		E760AE26240FE3FE00DE9EC8 /* Netwoking.swift in Sources */ = {isa = PBXBuildFile; fileRef = E760AE25240FE3FE00DE9EC8 /* Netwoking.swift */; };
+		E760AE26240FE3FE00DE9EC8 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = E760AE25240FE3FE00DE9EC8 /* Networking.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E701AD932514CF0A00303540 /* NetworkRequestParams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequestParams.swift; sourceTree = "<group>"; };
 		E760AE1A240FE3C700DE9EC8 /* iOSNetworking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = iOSNetworking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E760AE1D240FE3C700DE9EC8 /* iOSNetworking.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = iOSNetworking.h; sourceTree = "<group>"; };
 		E760AE1E240FE3C700DE9EC8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E760AE25240FE3FE00DE9EC8 /* Netwoking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Netwoking.swift; sourceTree = "<group>"; };
+		E760AE25240FE3FE00DE9EC8 /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,7 +60,8 @@
 		E760AE27240FEA7B00DE9EC8 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				E760AE25240FE3FE00DE9EC8 /* Netwoking.swift */,
+				E760AE25240FE3FE00DE9EC8 /* Networking.swift */,
+				E701AD932514CF0A00303540 /* NetworkRequestParams.swift */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -143,7 +146,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E760AE26240FE3FE00DE9EC8 /* Netwoking.swift in Sources */,
+				E760AE26240FE3FE00DE9EC8 /* Networking.swift in Sources */,
+				E701AD942514CF0A00303540 /* NetworkRequestParams.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

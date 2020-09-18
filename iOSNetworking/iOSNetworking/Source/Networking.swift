@@ -7,22 +7,22 @@
 //
 
 import Foundation
-let session = URLSession.shared
 
-open class Networking {
+public protocol Networking {
+    func registerNetworkRequest(requestData: NetworkRequestParams,
+                                completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void)
+}
+
+open class NetworkingRegister: Networking {
     
-    public static let shared: Networking = Networking()
+    let session = URLSession.shared
     
-    open func makeApiCall(completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void) {
-        let url = URL(string: "https://learnappmaking.com/ex/users.json")!
+    public func registerNetworkRequest(requestData: NetworkRequestParams, completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void) {
+        let url = URL(string: requestData.url)!
         let task = session.dataTask(with: url, completionHandler: { data, response, error in
             completionHandler(data, response, error)
         })
         task.resume()
-    }
-    
-    open func makeAnotherApiCall() -> Bool {
-        return true
     }
 }
 
