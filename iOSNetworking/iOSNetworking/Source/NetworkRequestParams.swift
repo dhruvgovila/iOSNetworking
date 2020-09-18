@@ -19,7 +19,7 @@ public enum HeaderDefaultParamsKeys: String {
 
 public protocol NetworkRequestParams {
     var method: HttpMethods { get set }
-    var requestData: Data? { get set }
+    var requestBody: Data? { get set }
     var url: String { get set }
-    var headerParams: [String: String]? { get set }
+    var headerParams: [HeaderDefaultParamsKeys: String]? { get set }
 }

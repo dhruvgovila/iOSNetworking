@@ -31,11 +31,11 @@ struct NetworkingRegister: Networking {
     
     public func registerNetworkRequest(requestData: NetworkRequestParams, completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void) {
         
-        guard let urlRequest = createURLRequest(requestData: requestData) else {
+        guard let request = createURLRequest(requestData: requestData) else {
             return
         }
         
-        let task = session.dataTask(with: urlRequest, completionHandler: { data, response, error in
+        let task = session.dataTask(with: request, completionHandler: { data, response, error in
             completionHandler(data, response, error)
         })
         task.resume()
@@ -47,14 +47,25 @@ struct NetworkingRegister: Networking {
             return nil
         }
         
+        switch requestData.method {
+        case .post :
+            if requestData.requestBody == nil {
+                return nil
+            }
+        default:
+            break
+        }
+        
         let request = NSMutableURLRequest(url: url)
         request.httpMethod = requestData.method.rawValue
+        request.httpBody = requestData.requestBody
         
         if let headerParams = requestData.headerParams {
             for (key, value) in headerParams {
-                request.setValue(value, forHTTPHeaderField: key)
+                request.setValue(value, forHTTPHeaderField: key.rawValue)
             }
         }
+        
         return request as URLRequest
     }
 }
