@@ -8,12 +8,22 @@
 
 import Foundation
 
+public protocol NetworkingProvider{
+    var networkingProvider: Networking { get }
+}
+
+extension NetworkingProvider {
+    var networkingProvider: Networking {
+        NetworkingRegister()
+    }
+}
+
 public protocol Networking {
     func registerNetworkRequest(requestData: NetworkRequestParams,
                                 completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void)
 }
 
-open class NetworkingRegister: Networking {
+struct NetworkingRegister: Networking {
     
     let session = URLSession.shared
     
