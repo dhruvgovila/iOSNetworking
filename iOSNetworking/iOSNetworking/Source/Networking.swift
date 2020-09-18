@@ -25,6 +25,8 @@ public protocol Networking {
 
 struct NetworkingRegister: Networking {
     
+    internal init(){}
+    
     let session = URLSession.shared
     
     public func registerNetworkRequest(requestData: NetworkRequestParams, completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void) {
