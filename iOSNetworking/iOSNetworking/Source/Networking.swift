@@ -12,7 +12,7 @@ public protocol NetworkingProvider{
     var networkingProvider: Networking { get }
 }
 
-extension NetworkingProvider {
+public extension NetworkingProvider {
     var networkingProvider: Networking {
         NetworkingRegister()
     }
@@ -30,11 +30,32 @@ struct NetworkingRegister: Networking {
     let session = URLSession.shared
     
     public func registerNetworkRequest(requestData: NetworkRequestParams, completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void) {
-        let url = URL(string: requestData.url)!
-        let task = session.dataTask(with: url, completionHandler: { data, response, error in
+        
+        guard let urlRequest = createURLRequest(requestData: requestData) else {
+            return
+        }
+        
+        let task = session.dataTask(with: urlRequest, completionHandler: { data, response, error in
             completionHandler(data, response, error)
         })
         task.resume()
+    }
+    
+    internal func createURLRequest(requestData: NetworkRequestParams) -> URLRequest? {
+        
+        guard let url = URL(string: requestData.url) else {
+            return nil
+        }
+        
+        let request = NSMutableURLRequest(url: url)
+        request.httpMethod = requestData.method.rawValue
+        
+        if let headerParams = requestData.headerParams {
+            for (key, value) in headerParams {
+                request.setValue(value, forHTTPHeaderField: key)
+            }
+        }
+        return request as URLRequest
     }
 }
 

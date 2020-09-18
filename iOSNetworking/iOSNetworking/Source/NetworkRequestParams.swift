@@ -13,8 +13,13 @@ public enum HttpMethods: String {
     case get = "GET"
 }
 
+public enum HeaderDefaultParamsKeys: String {
+    case authorization = "Authorization"
+}
+
 public protocol NetworkRequestParams {
     var method: HttpMethods { get set }
     var requestData: Data? { get set }
     var url: String { get set }
+    var headerParams: [String: String]? { get set }
 }
