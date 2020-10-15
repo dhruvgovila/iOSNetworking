@@ -3,7 +3,7 @@
 //  iOSNetworking
 //
 //  Created by Govila, Dhruv on 18/09/20.
-//  Copyright © 2020 Govila, Dhruv (US - Bengaluru). All rights reserved.
+//  Copyright Â© 2020 Govila, Dhruv (US - Bengaluru). All rights reserved.
 //
 
 import Foundation
@@ -15,6 +15,7 @@ public enum HttpMethods: String {
 
 public enum HeaderDefaultParamsKeys: String {
     case authorization = "Authorization"
+    case contentType = "Content-Type"
 }
 
 public protocol NetworkRequestParams {

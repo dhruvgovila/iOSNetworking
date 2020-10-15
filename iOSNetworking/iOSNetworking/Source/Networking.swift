@@ -3,10 +3,11 @@
 //  iOSNetworking
 //
 //  Created by Govila, Dhruv on 04/03/20.
-//  Copyright © 2020 Govila, Dhruv (US - Bengaluru). All rights reserved.
+//  Copyright Â© 2020 Govila, Dhruv (US - Bengaluru). All rights reserved.
 //
 
 import Foundation
+import UIKit
 
 public protocol NetworkingProvider{
     var networkingProvider: Networking { get }
@@ -21,6 +22,7 @@ public extension NetworkingProvider {
 public protocol Networking {
     func registerNetworkRequest(requestData: NetworkRequestParams,
                                 completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void)
+    func getImage(from url: String, completion: @escaping ((UIImage?) -> Void))
 }
 
 struct NetworkingRegister: Networking {
@@ -32,6 +34,7 @@ struct NetworkingRegister: Networking {
     public func registerNetworkRequest(requestData: NetworkRequestParams, completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void) {
         
         guard let request = createURLRequest(requestData: requestData) else {
+            completionHandler(nil, nil, nil)
             return
         }
         
@@ -69,6 +72,5 @@ struct NetworkingRegister: Networking {
         return request as URLRequest
     }
 }
-
 
 

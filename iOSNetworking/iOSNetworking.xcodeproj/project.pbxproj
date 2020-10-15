@@ -10,6 +10,7 @@
 		E701AD942514CF0A00303540 /* NetworkRequestParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = E701AD932514CF0A00303540 /* NetworkRequestParams.swift */; };
 		E760AE1F240FE3C700DE9EC8 /* iOSNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = E760AE1D240FE3C700DE9EC8 /* iOSNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E760AE26240FE3FE00DE9EC8 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = E760AE25240FE3FE00DE9EC8 /* Networking.swift */; };
+		E780F070253860A1002ED817 /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = E780F06F253860A1002ED817 /* ImageCache.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -18,6 +19,7 @@
 		E760AE1D240FE3C700DE9EC8 /* iOSNetworking.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = iOSNetworking.h; sourceTree = "<group>"; };
 		E760AE1E240FE3C700DE9EC8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E760AE25240FE3FE00DE9EC8 /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
+		E780F06F253860A1002ED817 /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 			children = (
 				E760AE25240FE3FE00DE9EC8 /* Networking.swift */,
 				E701AD932514CF0A00303540 /* NetworkRequestParams.swift */,
+				E780F06F253860A1002ED817 /* ImageCache.swift */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -146,6 +149,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E780F070253860A1002ED817 /* ImageCache.swift in Sources */,
 				E760AE26240FE3FE00DE9EC8 /* Networking.swift in Sources */,
 				E701AD942514CF0A00303540 /* NetworkRequestParams.swift in Sources */,
 			);
