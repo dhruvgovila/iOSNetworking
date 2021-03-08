@@ -16,6 +16,9 @@ public enum HttpMethods: String {
 public enum HeaderDefaultParamsKeys: String {
     case authorization = "Authorization"
     case contentType = "Content-Type"
+    case apiKey = "Api-key"
+    case accept = "Accept"
+    case xSignature = "X-Signature"
 }
 
 public protocol NetworkRequestParams {
@@ -23,4 +26,5 @@ public protocol NetworkRequestParams {
     var requestBody: Data? { get set }
     var url: String { get set }
     var headerParams: [HeaderDefaultParamsKeys: String]? { get set }
+    var queryParams: [URLQueryItem]? {get set}
 }

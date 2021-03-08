@@ -46,17 +46,23 @@ struct NetworkingRegister: Networking {
     
     internal func createURLRequest(requestData: NetworkRequestParams) -> URLRequest? {
         
-        guard let url = URL(string: requestData.url) else {
+        guard var url = URL(string: requestData.url) else {
             return nil
         }
         
         switch requestData.method {
-        case .post :
+        case .post:
             if requestData.requestBody == nil {
                 return nil
             }
-        default:
-            break
+        case .get:
+            if let queryParams = requestData.queryParams {
+                var urlComponents = URLComponents(url: url, resolvingAgainstBaseURL: true)
+                urlComponents?.queryItems = queryParams
+                if let newURL = urlComponents?.url {
+                    url = newURL
+                }
+            }
         }
         
         let request = NSMutableURLRequest(url: url)
