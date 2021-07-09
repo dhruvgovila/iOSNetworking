@@ -62,11 +62,27 @@
 		E760AE27240FEA7B00DE9EC8 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				E760AE25240FE3FE00DE9EC8 /* Networking.swift */,
-				E701AD932514CF0A00303540 /* NetworkRequestParams.swift */,
-				E780F06F253860A1002ED817 /* ImageCache.swift */,
+				E765F9D326983ACB005EF026 /* ImageCache */,
+				E765F9D226983AC0005EF026 /* Networking */,
 			);
 			path = Source;
+			sourceTree = "<group>";
+		};
+		E765F9D226983AC0005EF026 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				E760AE25240FE3FE00DE9EC8 /* Networking.swift */,
+				E701AD932514CF0A00303540 /* NetworkRequestParams.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		E765F9D326983ACB005EF026 /* ImageCache */ = {
+			isa = PBXGroup;
+			children = (
+				E780F06F253860A1002ED817 /* ImageCache.swift */,
+			);
+			path = ImageCache;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

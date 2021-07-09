@@ -11,6 +11,8 @@ import Foundation
 public enum HttpMethods: String {
     case post = "POST"
     case get = "GET"
+    case put = "PUT"
+    case delete = "DELETE"
 }
 
 public enum HeaderDefaultParamsKeys: String {

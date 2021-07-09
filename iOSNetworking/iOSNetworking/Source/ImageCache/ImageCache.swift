@@ -7,7 +7,7 @@
 
 import UIKit
 
-extension NetworkingRegister  {
+class ImageCache  {
     func getImage(from url: String, completion: @escaping ((UIImage?) -> Void)) {
         
         guard let url = URL(string: url) else {

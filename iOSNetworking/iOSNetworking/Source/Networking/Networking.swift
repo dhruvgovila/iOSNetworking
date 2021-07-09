@@ -22,7 +22,7 @@ public extension NetworkingProvider {
 public protocol Networking {
     func registerNetworkRequest(requestData: NetworkRequestParams,
                                 completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void)
-    func getImage(from url: String, completion: @escaping ((UIImage?) -> Void))
+//    func getImage(from url: String, completion: @escaping ((UIImage?) -> Void))
 }
 
 struct NetworkingRegister: Networking {
@@ -44,7 +44,7 @@ struct NetworkingRegister: Networking {
         task.resume()
     }
     
-    internal func createURLRequest(requestData: NetworkRequestParams) -> URLRequest? {
+    private func createURLRequest(requestData: NetworkRequestParams) -> URLRequest? {
         
         guard var url = URL(string: requestData.url) else {
             return nil
@@ -63,6 +63,8 @@ struct NetworkingRegister: Networking {
                     url = newURL
                 }
             }
+        default:
+            break
         }
         
         let request = NSMutableURLRequest(url: url)
